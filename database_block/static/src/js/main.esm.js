@@ -1,12 +1,12 @@
 /** @odoo-module **/
 import {ActionContainer} from "@web/webclient/actions/action_container";
 import {NavBar} from "@web/webclient/navbar/navbar";
-import {patch} from "web.utils";
+import {patch} from "@web/core/utils/patch";
 import {session} from "@web/session";
 
-patch(ActionContainer.prototype, "database_block.action_container", {
+patch(ActionContainer.prototype,{
     mounted() {
-        this._super.apply(this, arguments);
+        // this._super.apply(this, arguments);
         if (this.databaseBlockMessage) {
             const blockMessage = this.env.qweb.renderToString(
                 "database_block.BlockMessage",
@@ -26,7 +26,7 @@ patch(ActionContainer.prototype, "database_block.action_container", {
     },
 });
 
-patch(NavBar.prototype, "database_block.navbar", {
+patch(NavBar.prototype,{
     get session() {
         return session;
     },
