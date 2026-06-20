@@ -14,9 +14,7 @@
     "license": "Other OSI approved licence",  # MIT
     "depends": ["access_limit_records_number"],
     "external_dependencies": {"python": [], "bin": []},
-    "data": [
-        "data/base_limit_records_number.xml"
-        ],
+    "data": ["data/base_limit_records_number.xml"],
     "demo": [],
     "qweb": [],
     "post_load": None,
